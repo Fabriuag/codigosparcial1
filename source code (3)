@@ -1,0 +1,30 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  float numeros [17];
+  float decimas []={1,0,-2,3,4,5,-1,0,2,3,4,0,-1,0,2,1,0,1};
+  float *ptr=numeros; //El puntero apunta al primer elemento del arreglo
+  float *ptr2=decimas;
+  printf("Dame las calificaciones del grupo mas listo de la universidad.\n");
+    for (int i=0; i<18; i++) {
+      printf("Dame la calificacion %d: ", i+1);
+      scanf("%f", &*(ptr+i));
+      system("clear");
+    }
+  for (int i = 0;i<18;i++) {
+    *(ptr2+i)=*(ptr2+i)/10;
+    *(ptr+i)=*(ptr+i)+*(ptr2+i);
+    printf("La calificacion %d es: %.1f\n", i+1, *(ptr+i));
+  }
+  
+  return 0;
+}

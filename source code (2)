@@ -1,0 +1,59 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <time.h>
+/*
+void llenarArreglo(int arreglo[], int tamano){
+  for(int i=0; i<tamano; i++){
+    printf("Ingrese el valor de la posicion %d: ", i);
+    scanf("%d", &arreglo[i]);
+  }
+}*/
+void imprimirArreglo(int arreglo[], int tamano){
+
+  for (int x=0; x<tamano; x++){
+    printf("En posicion %d el valor es %d\n",x +1,arreglo[x]);
+  }
+
+}
+void ordenarBurbuja(int arreglo[], int tamano){
+  for(int y=0;y<tamano-1;y++){
+  for(int o=0;o<tamano-y;o++){
+    if(arreglo[o] > arreglo[o + 1]){
+      int temp =  arreglo[o];
+      arreglo[o] = arreglo[o+1];
+       arreglo[o+1] = temp;
+    }
+  }
+  }
+}
+//Funcion para llenar un arreglo con numeros enteros positivos aleatorios 
+void aleatorios(int arreglo[], int tamano){
+  for(int i=0; i<tamano; i++){
+    arreglo[i] = rand() % 100+1; //Generar numeros aleatorios entre 0 y 99
+  }
+}
+int main() {
+  srand(time(NULL)); //Inicializar la semilla del generador de no. aleatorios
+  int tamano;
+  //pedir al usuario que ingrese el tamaño del arreglo
+  printf("Ingrese el tamaño del arreglo: ");
+  scanf("%d", &tamano);
+
+  int arreglo[tamano];
+  aleatorios(arreglo, tamano);
+  printf("Arreglo original: \n");
+  imprimirArreglo(arreglo, tamano);
+  clock_t start = clock();
+  ordenarBurbuja(arreglo, tamano);
+  printf("Arreglo ordenado\n");
+  imprimirArreglo(arreglo,tamano);
+  printf("Tiempo transcurrido: %f", ((double)clock() - start) / CLOCKS_PER_SEC);
+  return 0;
+}

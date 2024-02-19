@@ -1,0 +1,27 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+//se hace una estructura llamada elemento con las variables nombre, cantidad y precio
+struct Elemento{
+  char nombre[20];
+  int cantidad;
+  float precio;
+};
+int main(void) {
+//se crea una variable de tipo elemento llamada reactivo y se da valor a las variables de la estructura
+  struct Elemento reactivo={"Reactivo A,", 10, 12.5};
+//se crea un puntero de tipo de elemento que apunta a la variable anteriormente creada(reactivo)
+  struct Elemento *ptr_reactivo=&reactivo;
+  
+  printf("Nombre Elemento: %s\nCantidad: %i\nPrecio: %f\n", ptr_reactivo->nombre, ptr_reactivo->cantidad, ptr_reactivo->precio);
+  ptr_reactivo->cantidad += 5;
+  printf("Cantidad actualizada a: %i\n", ptr_reactivo->cantidad);
+  
+  return 0;
+}

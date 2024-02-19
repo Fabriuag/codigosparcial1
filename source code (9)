@@ -1,0 +1,66 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main(void) {
+  //Declarando una matriz 2*2
+  int matriz[3][3];
+  int matriz2[3][3];
+  int matrizres[3][3];
+  //Capturar los datos de la matriz desde la entrada estandar
+  printf("Ingrese los elementos de la matriz: \n");
+
+  for (int i=0; i<3; i++)
+    {
+      for(int j=0; j<3; j++)
+        {
+          printf("Elemento [%d][%d]: ", i+1, j+1);
+          scanf("%d", &matriz[i][j]);
+          
+        }
+    }
+  //Imprimir la matriz
+  for (int i=0; i<4; i++)
+  {
+    for(int j=0; j<4; j++)
+      {
+        printf("%d  \n", matriz[i][j]);
+
+      }
+  }
+  for (int i=0; i<3; i++)
+    {
+      for(int j=0; j<3; j++)
+        {
+          printf("Elemento [%d][%d]: ", i+1, j+1);
+          scanf("%d", &matriz2[i][j]);
+
+        }
+    }
+  //Imprimir la matriz
+  for (int i=0; i<4; i++)
+  {
+    for(int j=0; j<4; j++)
+      {
+        printf("%d  \n", matriz2[i][j]);
+
+      }
+  }
+  for (int i=0; i<3; i++)
+  {
+    for(int j=0; j<3; j++)
+      {
+         matrizres[i][j] = matriz[i][j] + matriz2[i][j];
+        printf("%d  \n", matrizres[i][j]);
+
+      }
+  }
+ 
+  return 0;
+}

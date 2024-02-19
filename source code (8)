@@ -1,0 +1,47 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <math.h>
+int suma(int x, int y){
+  int r;  
+  r=x+y;
+  return r;
+}
+int resta(int x, int y){
+  int r;  
+  r=x-y;
+  return r;
+}
+int mul(int x, int y){
+  int r;  
+  r=x*y;
+  return r;
+}
+int div(int x, int y){
+  int r;  
+  r=x/y;
+  return r;
+}
+int pot(int x, int y){
+  int r;  
+  r=pow(x,y);
+  return r;
+}
+int main(void) {
+  int a=3;
+  int b=5;
+  int suma,resta,multiplicacion,division,potencia;
+  float div;
+  suma = suma(a,b);
+  resta = resta(a,b);
+  multipicacion = mul(a,b);
+  division = div(a,b);
+  potencia = pot(a,b);
+  return 0;
+}

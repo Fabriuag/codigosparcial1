@@ -1,0 +1,29 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+//Funcion para duplicar cada elemento del arreglo
+void duplicarElementos(int *arr, int tam)
+{
+  for(int i=0; i<tam; i++)
+    arr[i]=arr[i]*2;
+}
+void imprimirArreglo(int *arr, int tam)
+{
+  printf("Arreglo resultante");
+  for(int i=0; i<tam; i++)
+    {
+      printf("%d", arr[i]);
+    }
+}
+int main(void) {
+  const int tamano=5;
+  int miArreglo[tamano]={1,2,3,4,5};
+  //Llamar a la funcion para duplicar elementos
+  return 0;
+}

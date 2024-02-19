@@ -1,0 +1,45 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *matriz; // Declaración de un puntero para la matriz
+    int filas = 5;
+    int columnas = 4;
+    int valor = 2;
+
+    // Asignación de memoria para la matriz completa (5 filas x 4 columnas)
+    matriz = (int *)malloc(filas * columnas * sizeof(int));
+    if (matriz == NULL) {
+        printf("Error: no se pudo asignar memoria.\n");
+        return 1;
+    }
+
+    // Inicialización de los elementos de la matriz a 2 usando aritmética de punteros
+    int *ptr = matriz; // Puntero para recorrer la matriz
+    for (int i = 0; i < filas * columnas; i++) {
+        *ptr = valor; // Asignación del valor a través del puntero
+        ptr++; // Avance al siguiente elemento en la matriz
+    }
+
+    // Imprimir la matriz para verificar la inicialización
+    printf("Matriz inicializada a %d:\n", valor);
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            printf("%d ", *(matriz + i * columnas + j));
+        }
+        printf("\n");
+    }
+
+    // Liberar memoria asignada a la matriz
+    free(matriz);
+
+    return 0;
+}
